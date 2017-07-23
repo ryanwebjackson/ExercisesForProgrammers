@@ -9,6 +9,9 @@ namespace ExercisesForProgrammers
 				return _subtotal;
 			}
 			set {
+                if (this._tip == null) {
+                    this._tip = new Tip();
+                }
 	            this.Tip.Calculate(value, this.Tip.PercentageOfSubtotal);
 				_subtotal = value;
 			}
@@ -22,9 +25,9 @@ namespace ExercisesForProgrammers
                 return _tip;
 			}
 			set
-			{
+			{ //TODO: Write a test for this.
                 this.Subtotal = value.Subtotal;
-                this.Total = value.Value;
+                this.Total = _subtotal + value.Value;
                 _tip = value;
 			}
         }
