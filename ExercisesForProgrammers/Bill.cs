@@ -23,8 +23,9 @@ namespace ExercisesForProgrammers
 			}
 			set
 			{
+                this.Subtotal = value.Subtotal;
                 this.Total = value.Value;
-				_subtotal = value;
+                _tip = value;
 			}
         }
 
@@ -34,6 +35,20 @@ namespace ExercisesForProgrammers
         public Bill()
         {
             this.Tip = new Tip();
+        }
+
+		public Bill(double subtotal, Tip tip)
+        {
+            this._subtotal = subtotal;
+
+            if (subtotal.CompareTo(tip.Subtotal) == 0 || tip.Value.CompareTo(0D) == 0)
+            {
+                this._tip = tip;
+            }
+            else
+            {
+                throw new ArgumentException("Tip given not calculated against given subtotal");
+            }
         }
     }
 }
