@@ -5,7 +5,7 @@ using ExercisesForProgrammers; //TipCalculator project
 namespace TipCalculator.Tests
 {
     [TestFixture]
-    public class EndToEndTests
+    public class FunctionalTests
     {
         [Test]
         public void BillAndTipSetupWithRealisticValues_ShouldCalculateTipAmountAndTotal()
@@ -34,7 +34,15 @@ namespace TipCalculator.Tests
         [Test]
         public void GoodTest_OutputFormatting()
         {
-            throw new NotImplementedException();
+            //arrange
+            string expectedTipFormat = "$1.50";
+            double tipAmount = 1.50d;
+
+            //act
+            var actualTipFormatted = tipAmount.ToString("C");
+
+            //assert
+            Assert.AreEqual(expectedTipFormat, actualTipFormatted);
         }
 
         [Test]

@@ -16,9 +16,9 @@ namespace ExercisesForProgrammers
             var newTip = new Tip(newBill.Subtotal, percentageOfSubtotal); //Assignment of subtotal is a bit odd here.
             newBill.Tip = newTip;
 
-            Console.WriteLine($"The tip is {newTip.Value}. ");
+            Console.WriteLine($"The tip is {newTip.Value.ToString("C")}. ");
 
-            Console.WriteLine($"The total is {newBill.Total}. ");
+            Console.WriteLine($"The total is {newBill.Total.ToString("C")}. ");
 
             Console.ReadLine(); // Wait for user to end program.
         }

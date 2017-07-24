@@ -33,7 +33,7 @@
   <ItemGroup>
     <Compile Include="BillTests.cs" />
     <Compile Include="TipTests.cs" />
-    <Compile Include="EndToEndTests.cs" />
+    <Compile Include="FunctionalTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
