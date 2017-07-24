@@ -33,10 +33,16 @@
   <ItemGroup>
     <Compile Include="BillTests.cs" />
     <Compile Include="TipTests.cs" />
-    <Compile Include="EndToEndTest.cs" />
+    <Compile Include="EndToEndTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExercisesForProgrammers\TipCalculator.csproj">
+      <Project>{C1ACE25A-6829-4563-9636-E08DC4DAD01C}</Project>
+      <Name>TipCalculator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

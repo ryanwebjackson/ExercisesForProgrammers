@@ -12,7 +12,7 @@ namespace ExercisesForProgrammers
                 if (this._tip == null) {
                     this._tip = new Tip();
                 }
-	            this.Tip.Calculate(value, this.Tip.PercentageOfSubtotal);
+                this._tip.Calculate(value, this._tip.PercentageOfSubtotal);
 				_subtotal = value;
 			}
         }
@@ -25,33 +25,19 @@ namespace ExercisesForProgrammers
                 return _tip;
 			}
 			set
-			{ //TODO: Write a test for this.
-                this.Subtotal = value.Subtotal;
-                this.Total = _subtotal + value.Value;
+			{
                 _tip = value;
-			}
-        }
-
-        public double Total { get; private set; }
-
-
-        public Bill()
-        {
-            this.Tip = new Tip();
-        }
-
-		public Bill(double subtotal, Tip tip)
-        {
-            this._subtotal = subtotal;
-
-            if (subtotal.CompareTo(tip.Subtotal) == 0 || tip.Value.CompareTo(0D) == 0)
-            {
-                this._tip = tip;
-            }
-            else
-            {
-                throw new ArgumentException("Tip given not calculated against given subtotal");
+				this.Subtotal = value.Subtotal;
             }
         }
+
+        public double Total
+        { 
+            get
+            {
+                return _subtotal + this._tip.Value;
+            }
+        }
+
     }
 }

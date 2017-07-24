@@ -42,7 +42,12 @@ namespace ExercisesForProgrammers
         }
 
         public double Calculate(double subtotal, int percentageOfSubtotal) {
-            var result = subtotal * (percentageOfSubtotal / 100);
+            this._subtotal = subtotal;
+            this._percentageOfSubtotal = percentageOfSubtotal;
+
+            var result = ((double)percentageOfSubtotal / 100d);
+            result = subtotal * result;
+
             this.Value = result;
             return result;
         }
